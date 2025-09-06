@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Premium Activation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #212121;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header {
+            background: #1DB954;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .account-details {
+            background: #2d2d2d;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #3d3d3d;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            color: #b3b3b3;
+            font-weight: 500;
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .password-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toggle-password {
+            background: none;
+            border: none;
+            color: #1DB954;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .benefits {
+            margin: 30px 0;
+        }
+        
+        .benefits h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1DB954;
+        }
+        
+        .benefit-list {
+            list-style-type: none;
+        }
+        
+        .benefit-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            color: #1DB954;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .cta-button {
+            background: #1DB954;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #1ed760;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(29, 185, 84, 0.4);
+        }
+        
+        .logo {
+            text-align: center;
+            padding: 20px;
+            color: #b3b3b3;
+            font-size: 14px;
+            border-top: 1px solid #3d3d3d;
+        }
+        
+        .logo span {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .spotify-green {
+            color: #1DB954;
+        }
+        
+        .success-animation {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .success-animation i {
+            font-size: 60px;
+            color: #1DB954;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Thank You for Completing Your Tasks!</h1>
+            <p>Your Spotify Premium account has been successfully activated</p>
+        </div>
+        
+        <div class="success-animation">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <div class="content">
+            <div class="account-details">
+                <div class="detail-row">
+                    <span class="detail-label">Account Email:</span>
+                    <span class="detail-value">fatima@zahraa.com</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Password:</span>
+                    <div class="password-container">
+                        <span class="detail-value" id="password-display">zero155@55</span>
+                        <button class="toggle-password" id="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Account Status:</span>
+                    <span class="detail-value" style="color: #1DB954;">Premium Active</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Activation Date:</span>
+                    <span class="detail-value">October 15, 2023</span>
+                </div>
+            </div>
+            
+            <div class="benefits">
+                <h2>Your Premium Benefits</h2>
+                <ul class="benefit-list">
+                    <li>Ad-free music listening</li>
+                    <li>Download songs for offline playback</li>
+                    <li>Unlimited skips and high-quality audio</li>
+                    <li>Access to exclusive content and podcasts</li>
+                    <li>Group sessions for listening with friends</li>
+                </ul>
+            </div>
+            
+            <div class="cta-section">
+                <button class="cta-button" onclick="launchSpotify()">Launch Spotify Now</button>
+            </div>
+        </div>
+        
+        <div class="logo">
+            <span>Spotify<span class="spotify-green">®</span></span>
+        </div>
+    </div>
+    
+    <script>
+        function launchSpotify() {
+            alert("Redirecting to Spotify... Enjoy your Premium experience!");
+            // In a real implementation, this would redirect to Spotify
+            // window.location.href = "https://open.spotify.com/";
+        }
+        
+        // Password visibility toggle
+        const togglePassword = document.getElementById('toggle-password');
+        const passwordDisplay = document.getElementById('password-display');
+        let isPasswordVisible = false;
+        
+        togglePassword.addEventListener('click', function() {
+            isPasswordVisible = !isPasswordVisible;
+            
+            if (isPasswordVisible) {
+                passwordDisplay.textContent = 'zero155@55';
+                togglePassword.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            } else {
+                passwordDisplay.textContent = '••••••••••';
+                togglePassword.innerHTML = '<i class="fas fa-eye"></i>';
+            }
+        });
+        
+        // Initially mask the password
+        window.addEventListener('DOMContentLoaded', function() {
+            passwordDisplay.textContent = '••••••••••';
+        });
+    </script>
+</body>
+</html>
